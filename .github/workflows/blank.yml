@@ -45,7 +45,7 @@ jobs:
           pip install -r requirements.txt
       
       - name: flake8
-        run: flake8 --exclude=env
+        run: flake8 --exclude = env
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
