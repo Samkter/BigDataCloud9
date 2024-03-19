@@ -45,7 +45,6 @@ jobs:
           pip install -r requirements.txt
       
       - name: flake8
-      
         run: |
               autopep8 --in-place --aggressive --aggressive test_extract_data.py lambda.py extract_data.py 
               flake8 --exclude=env
