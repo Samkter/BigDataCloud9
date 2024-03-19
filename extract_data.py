@@ -100,7 +100,7 @@ def handler(event, context):
                f'day={current_date[8:]}/'
                f'{current_date}.csv')
     csv_buffer = df.to_csv(index=False)
-    s3.put_object(Body=csv_buffer, Bucket='buckets-final', Key=csv_key)
+    s3.put_object(Body=csv_buffer, Bucket='parcialfinal18032024', Key=csv_key)
 
     return {
         'statusCode': 200,
