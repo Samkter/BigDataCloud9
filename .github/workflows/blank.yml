@@ -37,7 +37,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.x'
+          python-version: '3.10.12'
           
       - name: Install dependencies
         run: |
@@ -60,6 +60,25 @@ jobs:
 
       - name: Upload files to S3
         run: |
-          aws s3 cp utils.py s3://bigdatagithub/BigDataGithub/
+          aws s3 cp utils.py s3://parcial18032024/casas/
           aws s3 cp test_utils.py s3://bigdatagithub/BigDataGithub/
-      
+      - name: Parcial 
+        run: | 
+          python -m venv env 
+          source env/bin/activate 
+          pip install urllib3==1.26.7
+          pip install zappa
+          pip freeze > requirements.txt
+
+          flake8 extract_data.py
+      - name: Pruebas Unitarias pytest 
+        run: |
+         pytest test_extract_data.py 
+         python3 -v 
+      - name: Despliegue de funciones con zappa 
+        run: | 
+         source env/bin/activate 
+         pwd 
+         zappa update dev
+         zappa update dev2 
+         zappa invoke dev lambda.f
