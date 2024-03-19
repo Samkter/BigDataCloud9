@@ -75,12 +75,12 @@ jobs:
           flake8 extract_data.py
       - name: Pruebas Unitarias pytest 
         run: |
-         pytest test_extract_data.py 
-         python3 -v 
+           pytest test_extract_data.py 
+           python3 -v 
       - name: Despliegue de funciones con zappa 
         run: | 
-         source env/bin/activate 
-         pwd 
-         zappa update dev
-         zappa update dev2 
-         zappa invoke dev lambda.f
+           source env/bin/activate 
+           pwd 
+           zappa update dev
+           zappa update dev2 
+           zappa invoke dev lambda.f
