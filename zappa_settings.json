@@ -2,7 +2,7 @@
     "dev": {
         "app_function": "lambda.f",
         "aws_region": "us-east-1",
-        "project_name": "BigDataCloud9",
+        "project_name": "bigdatacloud9",
         "runtime": "python3.10",
         "s3_bucket": "parcial18032024",
         "keep_warm": false,
@@ -24,7 +24,7 @@
         "role_name": "LabRole",
         "manage_roles": false,
         "apigateway_enabled": false,
-        "project_name": "BigDataCloud9",
+        "project_name": "bigdatacloud9",
         "runtime": "python3.10",
         "s3_bucket": "parcialfinal18032024",
 
