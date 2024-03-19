@@ -11,4 +11,3 @@ def test_suma():
 def test_resta():
     assert restar(2, 4) == -2
     assert restar(1, 1) == 0
-    
